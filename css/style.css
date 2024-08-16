@@ -1,0 +1,752 @@
+
+body{
+    min-height: 200vh;
+    background-color: #08003c;
+    padding: 0;
+    margin: 0;
+}
+.container{
+    width: 85%;
+    margin: 0 auto;
+    display: flex;
+    padding: 0;
+}
+/*  header styling for small screen */
+header{
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 700px;
+    width: 100%;
+    animation: fade-background 300s linear infinite;
+}
+
+@keyframes fade-background{
+    0%,100%{
+        background-image: url("../img/bg-1.jpg");
+        opacity: 1;
+    }
+    20%{
+        background-image: url("../img/bg-2.jpg");
+        opacity: 1;
+    }
+    40%{
+        background-image: url("../img/bg-3.jpg") ;
+        opacity: 1;
+    }
+    60%{
+        background-image: url("../img/bg-4.jpg");
+        opacity: 1;
+    }
+    80%{
+        background-image: url("../img/bg-5.jpg");
+        opacity: 1;
+    }
+}
+
+
+header .container-fluid .row{
+    padding: 40px 20px 10px 20px;
+    align-items: center;
+}
+
+.nav-bar {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+    position: relative;
+}
+
+.nav-bar .menu{
+    display: flex;
+    justify-content: space-between; 
+    list-style: none;
+    align-items: center;
+    padding: 0;
+}
+
+.nav-bar .menu li{
+    align-items: center;
+    padding-left: 40px;
+}
+
+.nav-link{
+    color: white;
+    font-weight: 600;
+    font: 18px;
+    text-align: center;
+    transition: 0.15s ease-in-out;
+    position: relative;
+}
+.active, .nav-link:hover, .nav-link:focus{
+    color: red;
+}
+
+.menu li a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    transition: 0.15s ease-in-out;
+}
+.menu li a:hover:after {
+    width: 100%;
+}
+.open-menu , .close-menu {
+    position: absolute;
+    color: white;
+    cursor: pointer;
+    font-size: 1.5rem;
+    display: none;
+}
+
+.open-menu{
+    top: 25%;
+    right: 0px;
+    transform: translateY(-50%);
+}
+
+.close-menu{
+    top: -25%;
+    right: 53px;
+    color: #d7232f;
+}
+
+#check{
+    display: none;
+}
+
+@media(max-width:767px){
+
+    header .container-fluid .row{
+        margin: 20px 30px 10px 0;
+        padding: 0;
+        align-items: center;
+    }
+    .search{
+        align-items: center;
+        justify-content: center;
+    }
+    .bi-search{
+        position: absolute;
+        top: -20px;
+        left: 80px;
+        color: white;
+        font-weight: bold;
+        text-align: center;
+        font-size: 20px;
+    }
+    .menu{
+        flex-direction: column;
+        justify-content: flex-end;
+        width: 100%;
+        height: 50vh;
+        gap: 0;
+        position: fixed;
+        top: 15vh;
+        padding: 30px 0;
+        right: -100%;
+        z-index: 100;
+        background-color: red;
+        transition: all 0.2s ease;
+    }
+    .menu li{
+        margin:  10px 0;
+        width: 100%;
+        padding: 0;
+    }.active{
+        color: white;
+    }
+    .menu li a{
+        padding: 10px;
+        width: 100%;
+        text-align: left;
+    }
+    .menu li:hover{
+        background-color: white;
+
+    }
+    .open-menu , .close-menu {
+        display: block;
+    }
+    #check:checked ~ .menu {
+        right: 0;
+    }
+}
+
+.search{
+    position: relative;
+}
+@media(min-width:992px){
+    .search{
+        float: right;
+    }
+    .bi-search{
+        position: absolute;
+        left: 100px;
+        top: 30%;
+        color: white;
+        font-weight: bold;
+        text-align: center;
+    }
+}
+
+button a.slidingbutton::after, .slidingbutton::before{
+    content: "SPONSOR";
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    color: #ffff;
+    left: 0;
+    width: 100%;
+    line-height: 50%;
+    transition: all 400ms;
+}
+button a.slidingbutton::before{
+    content: "REGISTER";
+    left: 190px;
+    background-image: linear-gradient(to right,#d7232f,#e7420ff1);
+}
+button a.slidingbutton:hover::after{
+    left: -190px;
+}
+button a.slidingbutton:hover::before{
+    left: 0;
+}
+button a{
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+    height: 100px;
+    position: relative;
+}
+button{
+    height: 40px;
+    width: 40%;
+    display: flex;
+    overflow: hidden;
+    border: none;
+    position: relative;
+    padding: 25px 30px;
+    align-items: center;
+    justify-content: center;
+    background-image: linear-gradient(to right,#e7420ff1, #d7232f);
+}
+
+.welcome-note{
+    margin-top: 130px;
+}
+
+.anticipate{
+    letter-spacing: 5px ;
+    color: white;
+    font-weight: 700;
+}
+
+.smfest{
+    font-size: 5rem;    
+    color: white;
+    margin-bottom: 0;
+    font-weight: 700;
+    font-family: clash display;
+}
+
+.owerri2024{
+    font-size: 100px;
+    color: white;
+    font-weight: bold;
+    padding-bottom: 0;
+    font-family: clash display;
+}
+
+.theme{
+    color: white;
+    font-weight: 600;
+    font-size: 13px;
+}
+
+.engage{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ticket a{
+    border: 1px solid rgb(34, 14, 73);
+    padding: 10px 15px;
+    text-decoration: none;
+    color: white ;
+    font-weight: 800;
+    margin-right: 25px;
+}
+
+.ticket a:hover{
+    color: rgb(14, 14, 78);
+}
+
+.video {
+    width: 40px;
+    height: 40px;
+    border: 1px solid rgb(14, 14, 78) ;
+    border-radius: 50%;
+    color: white;
+    text-decoration: none;
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bi-play-fill{
+    color: white;
+    font-size: 18px;
+}
+
+.sponso a{
+    text-decoration: none;
+    color: white ;
+    font-weight: 800;
+}
+
+@media ( max-width:451px){
+    .anticipate{
+        letter-spacing: 5px ;
+        color: white;
+        font-weight: 600;
+    }
+    .smfest{
+        font-size: 40px;
+        margin-bottom: 0;
+        font-weight: bold;
+    } 
+    .owerri2024{
+        font-size: 40px;
+        font-weight: bold;
+        padding-bottom: 0;
+    }    
+}
+
+
+
+
+section.counting{
+    background-color: #08003c;
+    margin: 0;
+    padding: 0;
+}
+section.counting .row{
+    margin: 70px 0 150px 0;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+section.counting .row div div.counting-box{
+    border: 1px solid white;
+    padding: 40px 20px;
+    text-align: center;
+}
+.counting-box h1{
+    color: #EE2F5B;
+}
+.counting-box p{
+    color: white;
+}
+
+
+
+/* section.about styling for small screen*/
+section.about{
+    margin: 30px 0;
+    color: white;
+}
+.about-text h1{
+    font-size: 60px;
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+.about-text p.aboutsmfest{
+    color: #EE2F5B;
+    margin-bottom: 20px;
+    letter-spacing: 5px;
+    font-weight: bold;
+    font-size: 17px;
+}
+.read-button{
+    position: relative;
+    height: 60px;
+    width: 170px;
+    border: 2px solid white;
+    display: flex;
+    z-index: 1;
+    margin-top: 40px;
+}
+.read-button .read-more:before, 
+.read-button .read-more:after{
+    content: "READ MORE";
+    position: absolute;
+    z-index: -1;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    transition: all 400ms;
+    line-height: 3.2;
+    text-align: center;
+    color: white;
+}
+.read-button .read-more:before{
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 400ms ease-in-out;
+    background-color: #d7232f;
+}
+.read-button .read-more:hover:before,
+.read-button .read-more:focus:before{
+transform: scaleX(1);
+}
+.aboutslide{
+    padding-left: 90px;
+    margin-right: 0;
+    padding-bottom: 30px;
+}
+.about-line{
+    position: relative;
+    height: 93%;
+    width: 99%;
+    border-radius: 10px;
+    border: 4px solid #EE2F5B;
+    padding-top: 8% ;
+}
+.about-line img{
+    margin-left: -9%;
+    padding-bottom: -70px;
+}
+.excellence{
+    position: absolute;
+    right: -40px;
+    bottom: 50px;
+    background-color: #101010;
+    border: 1px solid white;
+    padding: 19px 45px;
+    z-index: 110;
+}
+/* section.about styling for big screen*/
+@media (min-width:992px){
+    .about{
+        margin: 30px  0;
+        padding-bottom: 170px;
+    }
+    .about-textarea{
+        margin-top: 0;
+        padding-top: 0;
+        display: flex;
+        align-items: center;
+    }
+    .about-text{
+        text-align: left;
+        padding-top: 0;
+    }
+    .about-text h1{
+        font-size: 60px;
+        font-weight: 800;
+        margin-bottom: 20px;
+    }
+    .about-text p.aboutsmfest{
+        margin-bottom: 20px;
+        letter-spacing: 5px;
+        font-weight: bold;
+        font-size: 17px;
+    }
+
+}
+
+/*styling for the small screen sponsor*/
+.sponsor{
+    color: white;
+    margin: 90px 0 ;
+}
+.binance-line{
+    position: relative;
+    height: 93%;
+    width: 84%;
+    border-radius: 10px;
+    border: 4px solid #EE2F5B;
+    padding-top: 20px;
+
+}
+.binance-gift img{
+    height: 770px;
+    margin-left: -20px;
+}
+.global-sponsor{
+    height: 120px;
+    width: 210px;
+    border: 1px solid white;
+    background-color: #EE2F5B;
+    z-index: 120;
+    position: absolute;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    top: -8%;
+    left: -50px;
+    text-transform: capitalize;
+}
+.global-sponsor h1{
+    font-size: 50px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+.global-sponsor h5{
+    font-weight: bold;
+    font-size: 40px;
+    letter-spacing: 1px;
+}
+.choose-us div p.why{
+    color: #BF3E7C;
+    letter-spacing: 5px;
+    font-weight: 600;
+
+}
+.choose-us div h1{
+    font-size: 40px;
+    font-weight: 500;
+    padding-bottom: 14px;
+    margin-top: 0;
+}
+.icon{
+    font-size: 50px;
+    margin-right: 20px;
+    display: flex;
+    align-items: flex-start;
+}
+.sponsor-awareness h5{
+    font-weight: 600;
+    font-size: 30px;
+}
+.sponsor-button{
+    position: relative;
+    height: 60px;
+    width: 160px;
+    border: 2px solid white;
+    display: flex;
+    z-index: 1;
+    margin-top: 40px;
+
+}
+.sponsor-button a:before, 
+.sponsor-button a:after{
+    content: "SPONSOR";
+    position: absolute;
+    z-index: -1;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+
+    transition: all 400ms;
+    line-height: 3.1;
+    text-align: center;
+    color: white;
+
+}
+.sponsor-button a:before{
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 400ms ease-in-out;
+    background-color: #d7232f;
+    
+}
+.sponsor-button a:hover:before,
+.sponsor-button a:focus:before{
+    transform: scaleX(1);
+}
+
+
+/* styling for big screen sponsor*/
+@media(min-width:992px){
+    .sponsor{
+        margin: 40px 0;
+    }
+    .binance{
+        padding-left: 50px;
+    }
+    .binance-gift img{
+        margin-left: -70px;
+        padding-bottom: -70px;
+    }
+    .binance-gift img{
+        height: 800px;
+
+    }
+    .binance-line{
+        position: relative;
+        height: 90%;
+        width: 85%;
+        border-radius: 10px;
+        border: 4px solid #EE2F5B;
+        padding-top: 8% ;
+    }
+    
+    .global-sponsor{
+        height: 140px;
+        width: 280px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        top: -10%;
+        left: -110px;
+        text-transform: capitalize;
+    }
+        
+    
+    .global-sponsor h5{
+        font-weight: bold;
+        font-size: 40px;
+        letter-spacing: 1px;
+    }
+        
+    .global-sponsor h1{
+        font-size: 60px;
+        font-weight: bold;
+        margin-bottom: 15px;
+        font-family: clash display;
+    }
+    .choose-us h5{
+        font-weight: 700;
+        font-size: 23px;
+        letter-spacing: 1px;
+        font-family: clash display;
+    }
+    .choose-us div p.why{
+        letter-spacing: 5px;
+        font-weight: 700;
+        padding-top: 30px;
+    }
+    .choose-us div h1{
+        font-size: 60px;
+        font-weight: 600;
+        padding-bottom: 14px;
+        margin-top: 0;
+        font-family: clash display;
+    }
+    .sponsor-awareness h5{
+        font-weight: 600;
+        font-size: 30px; 
+    }
+}
+
+.volunteer{
+    color: white;
+    padding: 60px 0;
+    margin: 15% 0;
+}
+.volunteer-image{
+    padding-left: 90px;
+    margin-right: 0;
+    padding-bottom: 30px;
+}
+.v-image{
+    position: relative;
+    height: 90%;
+    width: 99%;
+    border-radius: 10px;
+    border: 4px solid #EE2F5B;
+    padding-top: 8% ;
+    
+}
+.v-image img{
+    margin-left: -70px;
+    padding-bottom: -70px;
+    
+}
+.v-200{
+    height: 150px;
+    width: 230px;
+    background-color: #101010;
+    border: 1px solid white;
+    position: absolute;
+    right: -90px;
+    bottom: 90px;
+    text-align: center;
+    padding-top: 30px;
+}
+.join{
+    color: #EE2F5B;
+    letter-spacing: 5px;
+    font-weight: 400;
+    font-size: 20px;
+
+}
+.v-write h1{
+    font-weight: 600;
+    font-size: 70px;
+    font-family: clash display;
+}
+.vol-button{
+    position: relative;
+    height: 60px;
+    width: 160px;
+    border: 2px solid white;
+    display: flex;
+    z-index: 1;
+    margin-top: 40px;
+
+}
+.vol-button a:before, 
+.vol-button a:after{
+    content: "VOLUNTEER";
+    position: absolute;
+    z-index: -1;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+
+    transition: all 400ms;
+    line-height: 3.1;
+    text-align: center;
+    color: white;
+
+}
+.vol-button a:before{
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 400ms ease-in-out;
+    background-color: #d7232f;
+    
+}
+.vol-button a:hover:before,
+.vol-button a:focus:before{
+    transform: scaleX(1);
+}
+
+
+
+
+
+
+.carosel{
+    color: #fff;
+}
+
+
+section.speakers{
+    color: #fff;
+}
+
+
+
+
+
+
+
+
+section.ticket-cart{
+    color: #ffff;
+}
